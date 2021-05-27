@@ -31,7 +31,7 @@ def main(flags):
                                                            int(os.environ.get('WORLD_SIZE', 1),
                                                                int(os.environ.get('RANK', -1))))
 
-    optimizer = vgg16.optimizer.create(C.get()['optimizer'])(model)
+    optimizer = vgg16.optimizer.create(C.get()['optimizer'],model)
     criterion = vgg16.optimizer.optimizer.criterion()
 
     for epoch in range(C.get().scheduler.epoch):
